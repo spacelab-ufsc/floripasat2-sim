@@ -1,0 +1,246 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2021-03-16 02:59:11
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft FloripaSat_2;
+GMAT FloripaSat_2.DateFormat = UTCGregorian;
+GMAT FloripaSat_2.Epoch = '01 Jan 2022 11:59:28.000';
+GMAT FloripaSat_2.CoordinateSystem = EarthMJ2000Eq;
+GMAT FloripaSat_2.DisplayStateType = Keplerian;
+GMAT FloripaSat_2.SMA = 6928.000000000002;
+GMAT FloripaSat_2.ECC = 0.001740000000001812;
+GMAT FloripaSat_2.INC = 97.97499999999999;
+GMAT FloripaSat_2.RAAN = 85.51000000000001;
+GMAT FloripaSat_2.AOP = 194.8700000000889;
+GMAT FloripaSat_2.TA = 165.2073999999126;
+GMAT FloripaSat_2.DryMass = 2.6;
+GMAT FloripaSat_2.Cd = 2.2;
+GMAT FloripaSat_2.Cr = 1.8;
+GMAT FloripaSat_2.DragArea = 0.02;
+GMAT FloripaSat_2.SRPArea = 0.02;
+GMAT FloripaSat_2.SPADDragScaleFactor = 1;
+GMAT FloripaSat_2.SPADSRPScaleFactor = 1;
+GMAT FloripaSat_2.NAIFId = -10000001;
+GMAT FloripaSat_2.NAIFIdReferenceFrame = -9000001;
+GMAT FloripaSat_2.OrbitColor = Red;
+GMAT FloripaSat_2.TargetColor = Teal;
+GMAT FloripaSat_2.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
+GMAT FloripaSat_2.CdSigma = 1e+70;
+GMAT FloripaSat_2.CrSigma = 1e+70;
+GMAT FloripaSat_2.Id = 'SatId';
+GMAT FloripaSat_2.Attitude = NadirPointing;
+GMAT FloripaSat_2.SPADSRPInterpolationMethod = Bilinear;
+GMAT FloripaSat_2.SPADSRPScaleFactorSigma = 1e+70;
+GMAT FloripaSat_2.SPADDragInterpolationMethod = Bilinear;
+GMAT FloripaSat_2.SPADDragScaleFactorSigma = 1e+70;
+GMAT FloripaSat_2.ModelFile = 'aura.3ds';
+GMAT FloripaSat_2.ModelOffsetX = 0;
+GMAT FloripaSat_2.ModelOffsetY = 0;
+GMAT FloripaSat_2.ModelOffsetZ = 0;
+GMAT FloripaSat_2.ModelRotationX = 0;
+GMAT FloripaSat_2.ModelRotationY = 0;
+GMAT FloripaSat_2.ModelRotationZ = 0;
+GMAT FloripaSat_2.ModelScale = 1;
+GMAT FloripaSat_2.AttitudeDisplayStateType = 'Quaternion';
+GMAT FloripaSat_2.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT FloripaSat_2.EulerAngleSequence = '321';
+GMAT FloripaSat_2.AttitudeReferenceBody = Earth;
+GMAT FloripaSat_2.AttitudeConstraintType = 'OrbitNormal';
+GMAT FloripaSat_2.BodyAlignmentVectorX = 1;
+GMAT FloripaSat_2.BodyAlignmentVectorY = 0;
+GMAT FloripaSat_2.BodyAlignmentVectorZ = 0;
+GMAT FloripaSat_2.BodyConstraintVectorX = 0;
+GMAT FloripaSat_2.BodyConstraintVectorY = 0;
+GMAT FloripaSat_2.BodyConstraintVectorZ = 1;
+
+%----------------------------------------
+%---------- GroundStations
+%----------------------------------------
+
+Create GroundStation UFSC_PP5UF;
+GMAT UFSC_PP5UF.OrbitColor = Thistle;
+GMAT UFSC_PP5UF.TargetColor = DarkGray;
+GMAT UFSC_PP5UF.CentralBody = Earth;
+GMAT UFSC_PP5UF.StateType = Spherical;
+GMAT UFSC_PP5UF.HorizonReference = Sphere;
+GMAT UFSC_PP5UF.Location1 = -27.600193;
+GMAT UFSC_PP5UF.Location2 = 311.482601;
+GMAT UFSC_PP5UF.Location3 = 0.04;
+GMAT UFSC_PP5UF.Id = 'StationId';
+GMAT UFSC_PP5UF.IonosphereModel = 'None';
+GMAT UFSC_PP5UF.TroposphereModel = 'None';
+GMAT UFSC_PP5UF.DataSource = 'Constant';
+GMAT UFSC_PP5UF.Temperature = 295.1;
+GMAT UFSC_PP5UF.Pressure = 1013.5;
+GMAT UFSC_PP5UF.Humidity = 55;
+GMAT UFSC_PP5UF.MinimumElevationAngle = 15;
+
+Create GroundStation INPE_RN;
+GMAT INPE_RN.OrbitColor = [255 130 0];
+GMAT INPE_RN.TargetColor = DarkGray;
+GMAT INPE_RN.CentralBody = Earth;
+GMAT INPE_RN.StateType = Spherical;
+GMAT INPE_RN.HorizonReference = Sphere;
+GMAT INPE_RN.Location1 = -5.836146;
+GMAT INPE_RN.Location2 = 324.792341;
+GMAT INPE_RN.Location3 = 0.02;
+GMAT INPE_RN.Id = 'StationId';
+GMAT INPE_RN.IonosphereModel = 'None';
+GMAT INPE_RN.TroposphereModel = 'None';
+GMAT INPE_RN.DataSource = 'Constant';
+GMAT INPE_RN.Temperature = 295.1;
+GMAT INPE_RN.Pressure = 1013.5;
+GMAT INPE_RN.Humidity = 55;
+GMAT INPE_RN.MinimumElevationAngle = 15;
+
+
+
+
+
+
+
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel DefaultProp_ForceModel;
+GMAT DefaultProp_ForceModel.CentralBody = Earth;
+GMAT DefaultProp_ForceModel.PrimaryBodies = {Earth};
+GMAT DefaultProp_ForceModel.SRP = Off;
+GMAT DefaultProp_ForceModel.RelativisticCorrection = Off;
+GMAT DefaultProp_ForceModel.ErrorControl = RSSStep;
+GMAT DefaultProp_ForceModel.GravityField.Earth.Degree = 4;
+GMAT DefaultProp_ForceModel.GravityField.Earth.Order = 4;
+GMAT DefaultProp_ForceModel.GravityField.Earth.StmLimit = 100;
+GMAT DefaultProp_ForceModel.GravityField.Earth.PotentialFile = 'EGM96.cof';
+GMAT DefaultProp_ForceModel.GravityField.Earth.TideModel = 'None';
+GMAT DefaultProp_ForceModel.Drag.AtmosphereModel = MSISE90;
+GMAT DefaultProp_ForceModel.Drag.HistoricWeatherSource = 'ConstantFluxAndGeoMag';
+GMAT DefaultProp_ForceModel.Drag.PredictedWeatherSource = 'ConstantFluxAndGeoMag';
+GMAT DefaultProp_ForceModel.Drag.CSSISpaceWeatherFile = 'SpaceWeather-All-v1.2.txt';
+GMAT DefaultProp_ForceModel.Drag.SchattenFile = 'SchattenPredict.txt';
+GMAT DefaultProp_ForceModel.Drag.F107 = 150;
+GMAT DefaultProp_ForceModel.Drag.F107A = 150;
+GMAT DefaultProp_ForceModel.Drag.MagneticIndex = 3;
+GMAT DefaultProp_ForceModel.Drag.SchattenErrorModel = 'Nominal';
+GMAT DefaultProp_ForceModel.Drag.SchattenTimingModel = 'NominalCycle';
+GMAT DefaultProp_ForceModel.Drag.DragModel = 'Spherical';
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator DefaultProp;
+GMAT DefaultProp.FM = DefaultProp_ForceModel;
+GMAT DefaultProp.Type = RungeKutta89;
+GMAT DefaultProp.InitialStepSize = 60;
+GMAT DefaultProp.Accuracy = 9.999999999999999e-12;
+GMAT DefaultProp.MinStep = 0.001;
+GMAT DefaultProp.MaxStep = 2700;
+GMAT DefaultProp.MaxStepAttempts = 50;
+GMAT DefaultProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- EventLocators
+%----------------------------------------
+
+Create ContactLocator ContactLocator1;
+GMAT ContactLocator1.Target = FloripaSat_2;
+GMAT ContactLocator1.Filename = 'ContactLocator1.txt';
+GMAT ContactLocator1.InputEpochFormat = 'TAIModJulian';
+GMAT ContactLocator1.InitialEpoch = '21545';
+GMAT ContactLocator1.StepSize = 10;
+GMAT ContactLocator1.FinalEpoch = '21545.138';
+GMAT ContactLocator1.UseLightTimeDelay = true;
+GMAT ContactLocator1.UseStellarAberration = true;
+GMAT ContactLocator1.WriteReport = true;
+GMAT ContactLocator1.RunMode = Automatic;
+GMAT ContactLocator1.UseEntireInterval = true;
+GMAT ContactLocator1.Observers = {INPE_RN, UFSC_PP5UF};
+GMAT ContactLocator1.LightTimeDirection = Receive;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+GMAT DefaultOrbitView.SolverIterations = Current;
+GMAT DefaultOrbitView.UpperLeft = [ 0.1458333333333333 0.03775883069427528 ];
+GMAT DefaultOrbitView.Size = [ 0.9940476190476191 0.9598051157125457 ];
+GMAT DefaultOrbitView.RelativeZOrder = 56;
+GMAT DefaultOrbitView.Maximized = true;
+GMAT DefaultOrbitView.Add = {FloripaSat_2, Earth, Sun};
+GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.DrawObject = [ true true true ];
+GMAT DefaultOrbitView.DataCollectFrequency = 1;
+GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.ShowPlot = true;
+GMAT DefaultOrbitView.MaxPlotPoints = 250;
+GMAT DefaultOrbitView.ShowLabels = true;
+GMAT DefaultOrbitView.ViewPointReference = Earth;
+GMAT DefaultOrbitView.ViewPointVector = [ 30000 0 0 ];
+GMAT DefaultOrbitView.ViewDirection = Earth;
+GMAT DefaultOrbitView.ViewScaleFactor = 1;
+GMAT DefaultOrbitView.ViewUpCoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.ViewUpAxis = Z;
+GMAT DefaultOrbitView.EclipticPlane = Off;
+GMAT DefaultOrbitView.XYPlane = On;
+GMAT DefaultOrbitView.WireFrame = Off;
+GMAT DefaultOrbitView.Axes = On;
+GMAT DefaultOrbitView.Grid = Off;
+GMAT DefaultOrbitView.SunLine = Off;
+GMAT DefaultOrbitView.UseInitialView = On;
+GMAT DefaultOrbitView.StarCount = 7000;
+GMAT DefaultOrbitView.EnableStars = Off;
+GMAT DefaultOrbitView.EnableConstellations = On;
+
+Create GroundTrackPlot DefaultGroundTrackPlot;
+GMAT DefaultGroundTrackPlot.SolverIterations = Current;
+GMAT DefaultGroundTrackPlot.UpperLeft = [ 0.1458333333333333 0.03775883069427528 ];
+GMAT DefaultGroundTrackPlot.Size = [ 0.9940476190476191 0.9598051157125457 ];
+GMAT DefaultGroundTrackPlot.RelativeZOrder = 60;
+GMAT DefaultGroundTrackPlot.Maximized = true;
+GMAT DefaultGroundTrackPlot.Add = {FloripaSat_2, INPE_RN, UFSC_PP5UF};
+GMAT DefaultGroundTrackPlot.DataCollectFrequency = 1;
+GMAT DefaultGroundTrackPlot.UpdatePlotFrequency = 50;
+GMAT DefaultGroundTrackPlot.NumPointsToRedraw = 0;
+GMAT DefaultGroundTrackPlot.ShowPlot = true;
+GMAT DefaultGroundTrackPlot.MaxPlotPoints = 250;
+GMAT DefaultGroundTrackPlot.CentralBody = Earth;
+GMAT DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
+
+Create XYPlot XYPlot_TimeXAltittude;
+GMAT XYPlot_TimeXAltittude.SolverIterations = Current;
+GMAT XYPlot_TimeXAltittude.UpperLeft = [ 0.1458333333333333 0.03775883069427528 ];
+GMAT XYPlot_TimeXAltittude.Size = [ 0.9940476190476191 0.9598051157125457 ];
+GMAT XYPlot_TimeXAltittude.RelativeZOrder = 78;
+GMAT XYPlot_TimeXAltittude.Maximized = true;
+GMAT XYPlot_TimeXAltittude.XVariable = FloripaSat_2.ElapsedDays;
+GMAT XYPlot_TimeXAltittude.YVariables = {FloripaSat_2.Earth.Altitude};
+GMAT XYPlot_TimeXAltittude.ShowGrid = true;
+GMAT XYPlot_TimeXAltittude.ShowPlot = true;
+
+Create XYPlot XYPlot1;
+GMAT XYPlot1.SolverIterations = Current;
+GMAT XYPlot1.UpperLeft = [ 0 0 ];
+GMAT XYPlot1.Size = [ 0 0 ];
+GMAT XYPlot1.RelativeZOrder = 0;
+GMAT XYPlot1.Maximized = false;
+GMAT XYPlot1.XVariable = FloripaSat_2.A1ModJulian;
+GMAT XYPlot1.YVariables = {FloripaSat_2.EarthMJ2000Eq.X};
+GMAT XYPlot1.ShowGrid = true;
+GMAT XYPlot1.ShowPlot = true;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+Propagate DefaultProp(FloripaSat_2) {FloripaSat_2.Earth.Altitude = 200, FloripaSat_2.ElapsedDays = 60, StopTolerance = 0.1};
